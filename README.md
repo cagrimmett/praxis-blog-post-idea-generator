@@ -12,7 +12,7 @@ A blog post idea generator for Praxis participants
 
 - [x] Make Proof of Concept
 - [ ] Separate JS, HTML, and CSS into separate files
-- [ ] Make user select a role and show an error if they don't
-- [ ] Hide the list, remove button on submit, and reveal the list after submit
+- [x] Make user select a role and show an error if they don't
+- [x] Hide the list, remove button on submit, and reveal the list after submit
 - [ ] Add CSS styles and animations
 - [ ] Add more ideas to the list
