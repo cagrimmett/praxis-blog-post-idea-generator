@@ -11,7 +11,7 @@ A blog post idea generator for Praxis participants
 ## To Do
 
 - [x] Make Proof of Concept
-- [ ] Separate JS, HTML, and CSS into separate files
+- [x] Separate JS, HTML, and CSS into separate files
 - [x] Make user select a role and show an error if they don't
 - [x] Hide the list, remove button on submit, and reveal the list after submit
 - [ ] Add CSS styles and animations

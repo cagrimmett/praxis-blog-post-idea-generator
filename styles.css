@@ -1,0 +1,14 @@
+.blog-post-container {
+
+}
+#holder {
+	display: none;
+}
+li {
+	width:75%;
+	font-size: 1.2em;
+	padding: 10px 5px;
+	margin:10px 0px;
+	list-style-position: outside;
+	border-radius: 5px;
+}

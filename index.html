@@ -3,72 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title>Praxis Blog Post Idea Generator</title>
-	<style>
-		#holder {
-			display: none;
-		}
-	</style>
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"  crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-  	<div id="input-area">
-		<h2>Pick a role:</h2>
-	  	<form id="role-form">
-	  		<input type="radio" name="role" value="Marketing"> Marketing</br>
-	  		<input type="radio" name="role" value="Sales"> Sales</br>
-	  		<input type="radio" name="role" value="Programming"> Programming<br />
-	  		<input type="radio" name="role" value="Operations"> Operations<br /><br />
-		</form>
-		<button id="get-new-idea">Generate ideas!</button>
+	<div class="blog-post-container">
+	  	<div id="input-area">
+			<h2>Pick a role:</h2>
+		  	<form id="role-form">
+		  		<input type="radio" name="role" value="Marketing"> Marketing</br>
+		  		<input type="radio" name="role" value="Sales"> Sales</br>
+		  		<input type="radio" name="role" value="Programming"> Programming<br />
+		  		<input type="radio" name="role" value="Operations"> Operations<br /><br />
+			</form>
+			<button id="generate">Generate ideas!</button>
+		</div>
+	  	
+		<div id="holder" class="animated fadeIn"> 
+			<h2>Your blog post ideas:</h2>
+			<ol id="idea-list">
+				<li id="1"></li>
+				<li id="2"></li>
+				<li id="3"></li>
+				<li id="4"></li>
+				<li id="5"></li>
+			</ol> 	  
+		</div>
 	</div>
-  	
-	<div id="holder"> 
-		<h2>Your blog post ideas:</h2>
-		<ol id="idea-list">
-			<li id="1"></li>
-			<li id="2"></li>
-			<li id="3"></li>
-			<li id="4"></li>
-			<li id="5"></li>
-		</ol> 	  
-	</div>
-    
-    <script>
-
-	function generateIdeas() {
-		
-		if (document.querySelectorAll('input[name="role"]:checked').length == 0) {
-			alert("You have to select a role!");
-			return false;
-		}
-		
-		var fullList = ["Write a response to the last article you read.","Review the last book you read.","Review the last movie you watched.","Write about a way you added value in an earlier job you had.","What is your worst character trait and how are you working to improve it?","What was your first job and what did you learn?","What is an unpopular opinion you hold and what are 3 reasons why you hold that opinion?","Write a haiku about your day.","Give a status update on your current PDP.","Write a visitor's guide to your favorite vacation spot.","Rewrite an earlier blog post and cut the length by 30%.","What tools do you use to use consistently to do your job?","What is one thing you do better than most people you know? Write about it.","Why are you pursuing $X? ","Title: <strong>10 Myths About $X</strong>","Title: <strong>15 $X Blogs To Follow</strong>","Title: <strong>8 $X podcasts you should listen to</strong>","Explain $X to a five year old","Title: <strong>Common $X problems you'll face as a beginner – and how to conquor them</strong>","Title: <strong>One Book on $X Everyone Needs to Read</strong>","Title: <strong>Why you shouldn't go into $X</strong>","Title: <strong>3 New $X Tools I'm Using</strong>","Title: <strong>Advice About $X You Should Ignore</strong>","Title: <strong>$X For Complete Beginners</strong>"],
-		randomList = [],
-		i = 5,
-		j = 0;
-	    // Select 5 unique items from the array and make a new array
-	    while (i--) {
-			j = Math.floor(Math.random() * fullList.length);
-			randomList.push(fullList[j]);
-			// Remove used items from the array to prevent duplicates
-			fullList.splice(j,1);
-		}		  
-		
-		var role = document.querySelector('input[name="role"]:checked').value;
-		
-		// Iterate to replace variables and append to the list	
-		for (var k = 0; k < randomList.length; k++) {
-			idea = randomList[k].replace("$X", role);
-			document.getElementById(k+1).innerHTML = idea;
-		}
-		// Hide the form
-		document.getElementById("input-area").style.display = 'none';	
-		// Show the list
-		document.getElementById("holder").style.display = 'block';	
-	}	
-	
-	document.getElementById("get-new-idea").addEventListener("click", generateIdeas);
-
-
-    </script>
+	<script src="idea-generator.js"></script>
   </body>
 </html>
